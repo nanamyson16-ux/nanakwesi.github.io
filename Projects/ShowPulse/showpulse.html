@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShowPulse Case Study - Movie Discovery & Ticket Booking Platform">
+    <title>ShowPulse Case Study | Portfolio</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+      :root {
+        --sp-primary:  #E8650A;
+        --sp-dark:     #B54D06;
+        --sp-light:    #FEF0E6;
+        --gradient-sp: linear-gradient(135deg, #E8650A 0%, #B54D06 100%);
+      }
+
+      .case-study-hero.section {
+        background: var(--gradient-sp) !important;
+        color: #fff !important;
+        padding: 100px 0 80px !important;
+        position: relative;
+        overflow: hidden;
+      }
+      .case-study-hero.section::before {
+        content: '';
+        position: absolute;
+        top: -80px; right: -80px;
+        width: 400px; height: 400px;
+        background: rgba(255,255,255,0.06);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .case-study-hero.section::after {
+        content: '';
+        position: absolute;
+        bottom: -120px; left: -60px;
+        width: 350px; height: 350px;
+        background: rgba(255,255,255,0.04);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .sp-hero-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .case-study-hero .back-link {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        color: rgba(255,255,255,0.8) !important;
+        font-size: 0.875rem !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        margin-bottom: 28px !important;
+        transition: color 0.2s, gap 0.2s !important;
+      }
+      .case-study-hero .back-link:hover { color: #fff !important; gap: 12px !important; }
+      .case-study-hero .case-study-title {
+        font-size: 3.2rem !important;
+        font-weight: 700 !important;
+        color: #fff !important;
+        margin: 0 0 10px !important;
+        letter-spacing: -1px !important;
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        -webkit-text-fill-color: #fff !important;
+        text-align: left !important;
+      }
+      .case-study-hero .case-study-subtitle {
+        font-size: 1.1rem !important;
+        color: rgba(255,255,255,0.8) !important;
+        margin-bottom: 40px !important;
+        text-align: left !important;
+      }
+      .sp-hero-meta { display: flex; flex-direction: column; gap: 10px; }
+      .sp-meta-row { display: flex; gap: 10px; font-size: 0.875rem; text-align: left; }
+      .sp-meta-row strong { opacity: 0.6; min-width: 80px; font-weight: 500; color: #fff; }
+      .sp-meta-row span { font-weight: 600; color: #fff; }
+      .sp-hero-image { display: flex; justify-content: center; align-items: center; }
+      .sp-hero-image img {
+        max-width: 100%;
+        max-height: 420px;
+        object-fit: contain;
+        filter: drop-shadow(0 24px 48px rgba(0,0,0,0.25));
+        border-radius: 16px;
+      }
+      .content-title {
+        background: var(--gradient-sp) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        text-align: left;
+      }
+
+      /* Bottom nav styles */
+      .case-nav-bottom {
+        padding: 56px 0;
+        background: #fff;
+        border-top: 1px solid #eee;
+      }
+      .case-nav-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .nav-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 24px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      .nav-btn.prev { background: #F2F2F2; color: #333; }
+      .nav-btn.prev:hover { background: #e5e5e5; }
+      .nav-btn.next { background: var(--gradient-sp); color: #fff; }
+      .nav-btn.next:hover { opacity: 0.9; }
+
+      @media (max-width: 900px) {
+        .sp-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+        .sp-hero-image { display: none; }
+      }
+      @media (max-width: 600px) {
+        .case-study-hero .case-study-title { font-size: 2.2rem !important; }
+        .sp-hero-inner { padding: 0 20px; }
+        .case-nav-inner { flex-direction: column; gap: 14px; }
+      }
+    </style>
+</head>
+<body>
+
+    <!-- Case Study Hero -->
+    <section class="case-study-hero section">
+        <div class="sp-hero-inner">
+            <div class="sp-hero-text">
+                <a href="../../index.html#projects" class="back-link" onclick="return true;">
+                    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Back to Projects
+                </a>
+                <h1 class="case-study-title">ShowPulse</h1>
+                <p class="case-study-subtitle">Movie Discovery & Ticket Booking Platform</p>
+                <div class="sp-hero-meta">
+                    <div class="sp-meta-row"><strong>Role</strong><span>UX/UI Designer</span></div>
+                    <div class="sp-meta-row"><strong>Duration</strong><span>3 Months</span></div>
+                    <div class="sp-meta-row"><strong>Tools</strong><span>Figma, FigJam</span></div>
+                    <div class="sp-meta-row"><strong>Year</strong><span>2024</span></div>
+                </div>
+            </div>
+            <div class="sp-hero-image">
+                <img src="showpulse-hero.jpg" alt="ShowPulse App Screens" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Summary -->
+    <section class="section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Project Summary</h2>
+                <p class="content-text">ShowPulse is a movie showtime and ticket check-in app designed to simplify how users discover movies and view showtimes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges -->
+    <section class="section case-study-accent-section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Challenges</h2>
+            </div>
+            <div class="challenge-cards">
+                <div class="challenge-card">
+                    <div class="challenge-number">01</div>
+                    <p class="challenge-text">Information is scattered across multiple screens</p>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-number">02</div>
+                    <p class="challenge-text">Search flows are confusing and inconsistent</p>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-number">03</div>
+                    <p class="challenge-text">Seat selection is unclear and difficult to understand</p>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-number">04</div>
+                    <p class="challenge-text">The check-in process causes uncertainty for users</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Mockup Image -->
+    <section class="case-study-image-section">
+        <div class="container" style="display: flex; justify-content: center; padding: 48px 40px;">
+            <img
+                src="showpulse-challenges-mockup.png"
+                alt="ShowPulse App Mockup"
+                style="max-width: 500px; width: 100%; filter: drop-shadow(0 16px 32px rgba(0,0,0,0.15));"
+            />
+        </div>
+    </section>
+
+    <!-- User Research Summary -->
+    <section class="section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">User Research Summary</h2>
+                <p class="content-text">To understand how users discover movies, browse showtimes, and check in at theaters, I conducted user interviews and usability tests with a diverse group of moviegoers. The research revealed that users primarily want a fast, simple, and reliable way to find movies and book tickets without navigating confusing or cluttered interfaces. Many participants struggled with existing apps due to scattered information architecture, inconsistent search experiences, and unclear ticket-check-in flows.</p>
+            </div>
+            <div class="content-block">
+                <h3 class="content-subtitle">User Pain Points</h3>
+            </div>
+            <div class="donut-cards">
+                <div class="donut-card">
+                    <div class="donut-ring donut-ring--85"><span class="donut-percent">85%</span></div>
+                    <h4 class="donut-title">Pain Point 1</h4>
+                    <span class="donut-badge">High Impact</span>
+                    <p class="donut-description">Users struggle with overly complex navigation, small fonts, and too many steps — deterring effective app use.</p>
+                </div>
+                <div class="donut-card">
+                    <div class="donut-ring donut-ring--90"><span class="donut-percent">90%</span></div>
+                    <h4 class="donut-title">Pain Point 2</h4>
+                    <span class="donut-badge donut-badge--critical">Critical</span>
+                    <p class="donut-description">Users are frustrated when apps fail to provide real-time updates on movie availability and seat reservations.</p>
+                </div>
+                <div class="donut-card">
+                    <div class="donut-ring donut-ring--70"><span class="donut-percent">70%</span></div>
+                    <h4 class="donut-title">Pain Point 3</h4>
+                    <span class="donut-badge donut-badge--medium">Medium Impact</span>
+                    <p class="donut-description">Users feel disappointed by the lack of personalized movie recommendations.</p>
+                </div>
+            </div>
+            <div class="content-block">
+                <h3 class="content-subtitle">Research Conclusion</h3>
+                <p class="content-text">Research showed that there was a clear need for a movie-booking app that emphasizes simplicity, clarity, and personalization. Users consistently gravitate toward interfaces that reduce cognitive load, guide them effortlessly, and adapt to their preferences. Current solutions fail to meet these expectations, indicating a strong opportunity to design an experience that is more accessible, intuitive, and aligned with users' real-life decision-making behaviors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Defining the Problem -->
+    <section class="section case-study-accent-section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Defining the Problem</h2>
+                <p class="content-text">With a clear understanding of user behaviors, needs, and pain points, the next step was to empathize more deeply with the people behind the data. I defined key user personas and reframed the insights into a focused problem statement to guide design decisions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Personas -->
+    <section class="section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">User Personas</h2>
+            </div>
+            <div class="persona-images-grid">
+                <div class="persona-image-item"><img src="showpulse-persona-1.png" alt="User Persona 1" class="persona-image"></div>
+                <div class="persona-image-item"><img src="showpulse-persona-2.png" alt="User Persona 2" class="persona-image"></div>
+                <div class="persona-image-item"><img src="showpulse-persona-3.png" alt="User Persona 3" class="persona-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Story -->
+    <section class="section case-study-accent-section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">User Story</h2>
+                <p class="content-text">Despite different user types, a core need emerged across all personas: users wanted a fast, simple, and reliable way to discover movies, view showtimes, and book tickets without confusion or friction.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Journey Map -->
+    <section class="section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">User Journey Map</h2>
+                <p class="content-text">Although multiple personas were identified, a single user journey map was created to represent the core movie discovery and ticket-booking flow shared across users, using Benjamin as the primary lens due to his higher sensitivity to friction and complexity.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-user-journey.png" alt="User Journey Map" class="showcase-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Goal Statement -->
+    <section class="section case-study-accent-section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Goal Statement</h2>
+                <p class="content-text">Based on the research insights, user pain points, and the core journey map, I defined a clear goal to guide the design of ShowPulse.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-goal-statement.png" alt="Goal Statement" class="showcase-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Impact -->
+    <section class="section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Business Impact</h2>
+                <p class="content-text">To understand the value of ShowPulse beyond user experience, it's important to consider the business outcomes this solution enables.</p>
+                <p class="content-text" style="margin-top: var(--spacing-md);">The ShowPulse solution will improve key business outcomes by making movie discovery, booking, and check-in faster and more intuitive. A clearer movie/theater search, streamlined steps, and smoother seat selection will help more users complete bookings, boosting ticket revenue, reducing confusion, and encouraging repeat usage.</p>
+            </div>
+            <div class="business-impact-grid">
+                <div class="business-impact-card"><p>Higher conversion rates</p></div>
+                <div class="business-impact-card"><p>Lower drop-off during booking</p></div>
+                <div class="business-impact-card"><p>Improved user satisfaction scores</p></div>
+                <div class="business-impact-card"><p>More returning users</p></div>
+                <div class="business-impact-card"><p>Operational gains, including faster check-ins and fewer seat issues</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Process -->
+    <section class="section case-study-accent-section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Design Process</h2>
+                <p class="content-text">With a clear understanding of user goals and pain points, I began structuring ShowPulse by defining its information architecture. I organized the app's content and features into logical categories, established a clear hierarchy for navigation, and ensured that key tasks like discovering movies, selecting showtimes, and booking tickets are easy to find and access. This IA foundation sets the stage for an intuitive and efficient user experience.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-information-architecture.png" alt="Information Architecture" class="showcase-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- User Flow -->
+    <section class="section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">User Flow</h2>
+                <p class="content-text">To design an efficient and user-centered experience, I mapped the key steps a user takes in ShowPulse. This flow highlights critical screens, actions, and decision points that guide users toward a successful movie booking with minimal friction.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-user-flow.png" alt="User Flow Diagram" class="showcase-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Paper Wireframes -->
+    <section class="section case-study-accent-section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Paper Wireframes</h2>
+                <p class="content-text">During the paper wireframing phase, I focused on iterating on the homepage, as it serves as the primary entry point for users. Multiple variations were explored to test content hierarchy, movie discovery patterns, and the placement of key actions before selecting a direction to carry forward.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-paper-wireframes.jpeg" alt="Paper Wireframes" class="showcase-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lo-Fi Prototype -->
+    <section class="section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Lo-Fi Prototype</h2>
+                <p class="content-text">After selecting a direction from the paper wireframes, I translated the layouts into low-fidelity digital designs. I then created a clickable prototype to validate navigation, task flow, and key interactions before moving into high-fidelity design.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-lofi-prototype.png" alt="Low-Fidelity Prototype" class="showcase-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Usability Testing -->
+    <section class="section case-study-accent-section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Usability Testing</h2>
+                <p class="content-text">I conducted usability testing on the low-fidelity prototype to evaluate how easily users could complete core tasks such as selecting a movie, choosing a theater, and booking seats. These sessions focused on identifying points of confusion, validating navigation clarity, and uncovering usability issues that could impact the booking experience before moving into high-fidelity design.</p>
+            </div>
+            <div class="content-block">
+                <h3 class="content-subtitle">Usability Testing Results</h3>
+            </div>
+            <div class="donut-cards">
+                <div class="donut-card">
+                    <div class="donut-ring donut-ring--80"><span class="donut-percent">80%</span></div>
+                    <h4 class="donut-title">Seat Selection</h4>
+                    <p class="donut-description">80% of users were unsure how to book multiple seats. <strong>Insight:</strong> Enhance the seat selection interface for clarity.</p>
+                </div>
+                <div class="donut-card">
+                    <div class="donut-ring donut-ring--75"><span class="donut-percent">75%</span></div>
+                    <h4 class="donut-title">Movie Details Visibility</h4>
+                    <p class="donut-description">75% of users did not see key movie details readily when they opened the Movie Details page.</p>
+                </div>
+                <div class="donut-card">
+                    <div class="donut-ring donut-ring--50"><span class="donut-percent">50%</span></div>
+                    <h4 class="donut-title">Theater Selection</h4>
+                    <p class="donut-description">50% of participants experienced difficulties booking their preferred theater due to limited options and day selection challenges.</p>
+                </div>
+            </div>
+            <div class="content-block">
+                <h3 class="content-subtitle">Research Conclusion</h3>
+                <p class="content-text">The usability study highlighted key areas where users faced difficulties, including theater selection, seat booking, and movie details visibility. Addressing these insights will help streamline the user flow, reduce confusion, and improve the overall experience on ShowPulse.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Refining the Design -->
+    <section class="section case-study-accent-section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Refining the Design</h2>
+                <p class="content-text">Based on usability testing insights, I refined the prototype to address key pain points, such as seat selection clarity and simplifying theater and movie choice. I enhanced visual hierarchy, standardized components, and polished interactions to make the interface more intuitive and cohesive. These refinements ensure the design is both user-friendly and visually consistent across the booking experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Iteration 1 -->
+    <section class="section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h3 class="content-subtitle">Design Iteration 1</h3>
+                <p class="content-text"><strong>Challenge:</strong> 50% of participants struggled to book their preferred theater because they were unable to easily view or select alternative viewing days, which limited their booking options.</p>
+                <p class="content-text" style="margin-top: var(--spacing-sm);"><strong>Solution:</strong> I introduced a clear and prominent day selection component that allows users to quickly choose their preferred viewing day. This improvement increases booking flexibility and reduces friction during theater selection.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-iteration1.png" alt="Design Iteration 1 - Day Selection" class="showcase-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Iteration 2 -->
+    <section class="section case-study-accent-section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h3 class="content-subtitle">Design Iteration 2</h3>
+                <p class="content-text"><strong>Challenge:</strong> 75% of users did not immediately notice key movie details when opening the Movie Details page, making it harder for them to access important information.</p>
+                <p class="content-text" style="margin-top: var(--spacing-sm);"><strong>Solution:</strong> I added a clearly labeled "More Info" affordance that guides users to additional movie details, improving content discoverability and reducing confusion.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-iteration2.png" alt="Design Iteration 2 - Movie Details" class="showcase-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Iteration 3 -->
+    <section class="section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h3 class="content-subtitle">Design Iteration 3</h3>
+                <p class="content-text"><strong>Challenge:</strong> 80% of users were unsure how to select and book multiple seats, indicating confusion around seat availability and selection states.</p>
+                <p class="content-text" style="margin-top: var(--spacing-sm);"><strong>Solution:</strong> I enhanced the seat selection experience by introducing a clear seat legend and distinct visual states for available, selected, and taken seats. This improvement helps users quickly understand how to select multiple seats and interpret seat availability with confidence.</p>
+                <p class="content-text" style="margin-top: var(--spacing-sm); font-style: italic; font-size: var(--font-size-sm); color: var(--color-text-light);">Note: The before-and-after mockups focus on the seat grid and legend only, highlighting the area where users experienced the most confusion.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-iteration3.png" alt="Design Iteration 3 - Seat Selection" class="showcase-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Hi-Fi Prototype -->
+    <section class="section case-study-accent-section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Hi-Fi Prototype</h2>
+                <p class="content-text">The high-fidelity prototype showcases the polished visual design, refined interactions, and improved usability informed by earlier low-fidelity testing. Key areas, such as seat selection, movie details, and day selection, were iteratively enhanced to address user pain points identified in the usability study.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-hifi-prototype.png" alt="High-Fidelity Prototype" class="showcase-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Design System -->
+    <section class="section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Design System</h2>
+                <p class="content-text">To maintain visual consistency and improve usability across the product, I defined a foundational design system that combines color and typography guidelines. The system establishes clear visual hierarchy, supports readability, and ensures consistent styling across key screens and interactions.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-design-system.png" alt="Design System - Colors & Typography" class="showcase-image">
+            </div>
+            <div class="content-block">
+                <p class="content-text">The iconography system was designed to be simple, consistent, and easily recognizable, supporting key actions and navigation while reducing cognitive load across the interface.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-design-system-icons.png" alt="Design System - Iconography" class="showcase-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Mockups -->
+    <section class="section case-study-accent-section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Mockups</h2>
+                <p class="content-text">These mockups present a selection of key screens that demonstrate the end-to-end user flow, from discovery to completion. They highlight how the final visual design, layout consistency, and interaction patterns work together to support usability and clarity across the product.</p>
+            </div>
+            <div class="image-showcase">
+                <img src="showpulse-mockups.png" alt="Final Mockups" class="showcase-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Accessibility Considerations -->
+    <section class="section">
+        <div class="container case-study-content">
+            <div class="content-block">
+                <h2 class="content-title">Accessibility Considerations</h2>
+            </div>
+            <div class="accessibility-cards">
+                <div class="accessibility-card-new">
+                    <div class="accessibility-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 8v4M12 16h.01"/>
+                        </svg>
+                    </div>
+                    <h4 class="accessibility-card-title">Color Contrast</h4>
+                    <p class="accessibility-card-description">Ensures text, icons, and key elements are easily distinguishable for users with visual impairments.</p>
+                </div>
+                <div class="accessibility-card-new">
+                    <div class="accessibility-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 7h16M4 12h16M4 17h10"/>
+                        </svg>
+                    </div>
+                    <h4 class="accessibility-card-title">Legible Typography</h4>
+                    <p class="accessibility-card-description">Clear fonts and hierarchy allow users to scan content and understand information quickly.</p>
+                </div>
+                <div class="accessibility-card-new">
+                    <div class="accessibility-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"/>
+                        </svg>
+                    </div>
+                    <h4 class="accessibility-card-title">Interactive Feedback</h4>
+                    <p class="accessibility-card-description">Buttons, seat selections, and navigation elements provide visual cues on interaction.</p>
+                </div>
+                <div class="accessibility-card-new">
+                    <div class="accessibility-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12h18M3 6h18M3 18h18"/>
+                        </svg>
+                    </div>
+                    <h4 class="accessibility-card-title">Accessible Navigation</h4>
+                    <p class="accessibility-card-description">Navigation supports screen readers and predictable gestures, making the app usable for all.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Takeaways -->
+    <section class="section case-study-accent-section">
+        <div class="container case-study-content">
+            <div class="content-block-centered">
+                <h2 class="content-title">Takeaways</h2>
+                <p class="content-text">As a movie lover, I wanted to create an experience that makes discovering and booking movies feel simple and enjoyable rather than stressful. Working through research, low-fidelity flows, and usability insights helped me see how small design decisions can either support or break that experience. This case study reinforced my focus on clarity, consistency, and designing with real user behavior in mind.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM NAV -->
+    <nav class="case-nav-bottom">
+        <div class="case-nav-inner">
+            <a href="../FlyEase/flyease.html" class="nav-btn next" onclick="return true;">
+                Next Case Study: FlyEase
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2024 Portfolio. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/nkwesi" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="#" class="footer-link">Behance</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
